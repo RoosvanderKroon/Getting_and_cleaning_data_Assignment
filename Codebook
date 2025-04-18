@@ -1,0 +1,32 @@
+# CodeBook
+
+Explains the data and processing used to create the tidy dataset
+
+## Data Source
+
+The data comes from the [UCI HAR Dataset], which includes sensor data from smartphones worn by 30 people doing different activities; walking, sitting, and laying down.
+
+## What the Script Does
+
+`run_analysis.R`:
+1. Merges the training and test sets.
+2. Keeps only mean and standard deviation measurements.
+3. Replaces activity codes with names (like "WALKING").
+4. Cleans up variable names to be more readable.
+5. Creates a tidy dataset with the **average of each variable for each activity and each subject**.
+
+## What’s in `tidy_dataset.txt`
+
+Each row = one person doing one activity  
+Each column = the average of a specific sensor measurement (like accelerometer or gyroscope)
+
+## Naming
+
+Some quick examples:
+- `TimeBodyAccelerometerMeanX` = average of body acceleration in the X direction (time domain)
+- `FrequencyBodyGyroscopeSTDZ` = standard deviation of body gyroscope data on Z axis (frequency domain)
+
+## Units
+
+The measurements are in normalized units — no specific scale, since they come from smartphone sensors.
+
